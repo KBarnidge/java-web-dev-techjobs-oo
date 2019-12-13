@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ToStringTest {
-    Job testJobS1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    Job testJobS1 = new Job("Name", new Employer("Employer"), new Location("Location"), new PositionType("PT"), new CoreCompetency("CC"));
 
     @Test
     public void blankLineBeforeAndAfter() {
@@ -12,6 +12,15 @@ public class ToStringTest {
     }
     @Test
     public void formattingLabelsAndLines() {
-        ///////////
+        String testString2 = testJobS1.toString();
+        String testString2x = "\nID: 1\nName: Name\nEmployer: Employer\nLocation: Location\nPosition Type: PT\nCore Competency: CC\n";
+        assertEquals(testString2, testString2x);
+    }
+    @Test
+    public void emptyField() {
+        Job testJobS3 = new Job("Name", new Employer(""), new Location("LC"), new PositionType("PT"), new CoreCompetency("CC"));
+        String testString3 = testJobS3.toString();
+        String testString3x = "\nID: 3\nName: Name\nEmployer: Data not available\nLocation: LC\nPosition Type: PT\nCore Competency: CC\n";
+        assertEquals(testString3, testString3x);
     }
 }
