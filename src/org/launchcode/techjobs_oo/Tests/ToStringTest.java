@@ -1,4 +1,5 @@
-package org.launchcode.techjobs_oo;
+package org.launchcode.techjobs_oo.Tests;
+import org.launchcode.techjobs_oo.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
